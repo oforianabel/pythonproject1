@@ -16,6 +16,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Read the titanic csv
+# Change file path if different dataset is used.
 df = pd.read_csv('Data Analytics//Week 4//bank.csv')
 
 # Print the dataset
@@ -51,6 +52,7 @@ df.iloc[0]
 # Convert string of Sex column to numbers with pandas
 #df['Embarked'] = pd.factorize(df['Embarked'])[0]
 # Factorize the 'string' column and store the dictionary in a variable
+# Factoristion changes when dataset changes
 dict = pd.factorize(df['job'])
 df['job'] = pd.factorize(df['job'])[0]
 # Factorize the 'string' column and store the dictionary in a variable
@@ -100,6 +102,7 @@ df['job'].unique()
 
 
 # Select only the columns of features
+# X values need to change for different dataset
 X = df[['age',
         'job',
         'marital',
@@ -111,6 +114,7 @@ X = df[['age',
         'contact']]
 
 # Select the column of prediction class
+# Y value changes for different dataset
 Y = df['termdeposit']
 
 # This time we will perform a proper ten-fold Cross Validation
